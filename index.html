@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Age calculator app</title>
+
+
+<body>
+  <main>
+    <div class="container-data"> <!-- Espaço para preencher com a data de nascimento -->
+      <div class="fill-data error-message">
+        <div class="item-date">
+          <label for="day">Day</label>
+          <input type="number" id="day" placeholder="DD" onKeyPress="return maximo(this, 2)"></input>
+          <span id="error-day" class="hide"></span>
+        </div>
+        <div class="item-date">
+          <label for="month">Month</label>
+          <input type="number" id="month" placeholder="MM" onKeyPress="return maximo(this, 2)"></input> 
+          <span id="error-month" class="hide"></span>
+        </div>
+        <div class="item-date">
+          <label for="year">Year</label>
+          <input type="number" id="year" placeholder="YYYY" onKeyPress="return maximo(this, 4)"></input>  
+          <span id="error-year" class="hide"></span>
+        </div>
+      </div>
+
+      <div class="btn-divider"> <!-- Divisão com botão que calcula o resultado -->
+        <hr>
+        <button class="btn-calculate" onclick="calcular()">
+          <img src="assets/images/icon-arrow.svg" alt="">
+        </button>
+      </div>
+  
+        
+      <div class="age-result"> <!-- Resultado da idade em dias, meses e anos -->
+        <div class="years-result"><span>--</span>years</div>
+        <div class="months-result"><span>--</span>months</div>
+        <div class="days-result"><span>--</span>days</div>
+      </div>
+    </div>
+  
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Cristielle Reis</a>.
+    </div>
+
+  </main>
+  
+  <script src="assets/arquivo.js"></script>
+
+</body>
+</html>

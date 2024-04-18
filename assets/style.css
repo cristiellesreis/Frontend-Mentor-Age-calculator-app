@@ -1,0 +1,141 @@
+:root{
+    --color-off-white:hsl(0, 0%, 94%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-light-gray: hsl(0, 0%, 86%);
+    --color-purple: hsl(259, 100%, 65%);
+    --color-light-red: hsl(0, 100%, 67%);
+    --color-smokey-gray:hsl(0, 1%, 44%);
+    --color-off-black: hsl(0, 0%, 8%);
+    --font-principal:"Poppins",sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-off-white);
+}
+
+.hide{
+    display: none;
+}
+
+.container-data{
+    background-color: var(--color-white);
+    width: 50rem;
+    height: 38rem;
+    border-radius: 1.5rem 1.5rem 10rem 1.5rem;
+    padding-left: 3rem;
+}
+
+.fill-data{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.item-date{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.fill-data label{
+    font-family: var(--font-principal);
+    color: var(--color-smokey-gray);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: .2rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.fill-data input {
+    width: 9rem;
+    height: 4rem;
+    border-radius: 0.5rem;
+    border: .1rem solid var(--color-light-gray);
+    font-family: var(--font-principal);
+    font-size: 2rem;
+    font-weight: 700;
+    padding-left: 1rem;
+}
+
+input, button{
+    cursor: pointer;
+}
+
+.fill-data input:hover{
+    border-color: var(--color-purple);
+}
+
+.fill-data input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.btn-divider{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-divider hr{
+    width: 38rem;
+    border: .1rem solid var(--color-light-gray);
+}
+
+.btn-calculate{
+    background-color:var(--color-purple);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.btn-calculate:hover{
+    background-color: var(--color-off-black);
+}
+
+.btn-calculate img{
+    width: 2.5rem;
+}
+
+.age-result{
+    font-family: var(--font-principal);
+    font-style: italic;
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--color-off-black);
+}
+
+.age-result span{
+    color: var(--color-purple);
+}
+
+.attribution{
+    margin-top: 3rem;
+    font-family: var(--font-principal);
+    font-size: .8rem;
+}
+
+.error-message span{
+    font-family: var(--font-principal);
+    color: var(--color-light-red);
+    font-size: .8rem;
+    font-style: italic;
+    margin-top: .5rem;
+    font-weight: 400;
+}
+
+
+
