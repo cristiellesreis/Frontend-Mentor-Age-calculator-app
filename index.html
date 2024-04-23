@@ -36,16 +36,16 @@
 
       <div class="btn-divider"> <!-- Divisão com botão que calcula o resultado -->
         <hr>
-        <button class="btn-calculate" onclick="calcular()">
+        <button class="btn-calculate" onclick="processarCalculo()">
           <img src="assets/images/icon-arrow.svg" alt="">
         </button>
       </div>
   
         
       <div class="age-result"> <!-- Resultado da idade em dias, meses e anos -->
-        <div class="years-result"><span>38 </span>years</div>
-        <div class="months-result"><span>5 </span>months</div>
-        <div class="days-result"><span>25 </span>days</div>
+        <div class="years-result"><span id="years-result">--</span> years</div>
+        <div class="months-result"><span id="months-result">--</span> months</div>
+        <div class="days-result"><span id="days-result">--</span> days</div>
       </div>
     </div>
   
