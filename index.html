@@ -8,25 +8,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" media="(max-width: 800px)" href="style.css">
+
   <title>Frontend Mentor | Age calculator app</title>
 
 
 <body>
   <main>
     <div class="container-data"> <!-- Espaço para preencher com a data de nascimento -->
-      <div class="fill-data error-message">
+      <div class="fill-data">
         <div class="item-date">
-          <label for="day">Day</label>
+          <label for="day" id="label-day">Day</label>
           <input type="number" id="day" placeholder="DD" onKeyPress="return maximo(this, 2)"></input>
           <span id="error-day" class="hide"></span>
         </div>
         <div class="item-date">
-          <label for="month">Month</label>
+          <label for="month" id="label-month">Month</label>
           <input type="number" id="month" placeholder="MM" onKeyPress="return maximo(this, 2)"></input> 
           <span id="error-month" class="hide"></span>
         </div>
         <div class="item-date">
-          <label for="year">Year</label>
+          <label for="year" id="label-year">Year</label>
           <input type="number" id="year" placeholder="YYYY" onKeyPress="return maximo(this, 4)"></input>  
           <span id="error-year" class="hide"></span>
         </div>
@@ -41,9 +43,9 @@
   
         
       <div class="age-result"> <!-- Resultado da idade em dias, meses e anos -->
-        <div class="years-result"><span>--</span>years</div>
-        <div class="months-result"><span>--</span>months</div>
-        <div class="days-result"><span>--</span>days</div>
+        <div class="years-result"><span>38 </span>years</div>
+        <div class="months-result"><span>5 </span>months</div>
+        <div class="days-result"><span>25 </span>days</div>
       </div>
     </div>
   

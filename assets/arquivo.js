@@ -1,79 +1,78 @@
+var labelDay = document.getElementById('label-day');
 var fieldDay = document.getElementById('day'); 
 var errorDay = document.getElementById('error-day');
 
+var labelMonth = document.getElementById('label-month');
 var fieldMonth = document.getElementById('month'); 
 var errorMonth = document.getElementById('error-month');
 
+var labelYear = document.getElementById('label-year');
 var fieldYear = document.getElementById('year'); 
 var errorYear = document.getElementById('error-year');
 
-
 function maximo(campo, tamanhoMaximo) {
-    console.info('campo', campo);
-    console.info('tamanhoMaximo', tamanhoMaximo);
-    console.info('campo.value.length', campo.value.length);
     if(campo.value.length == tamanhoMaximo) {
-        console.info('retorno', false);
         return false;
     }
-    console.info('retorno', true);
     return true;
 }
 
-
-
-function calcular(){
-    validarCamposObrigatorios();
-    validarCamposInvalidos();
+function calcular() {
+    validarDia();
+    validarMes();
+    validarAnos();
 }
 
-
-function validarCamposObrigatorios(){
-
-    if (fieldDay.value.length==0){
-        errorDay.innerHTML="This field is required";
-        errorDay.classList.remove("hide");
-        errorDay.classList.add("error-message");
-    }else{
-        errorDay.innerHTML="";
-    }
-
-
-    if (fieldMonth.value.length==0){
-        errorMonth.innerHTML="This field is required";
-        errorMonth.classList.remove("hide");
-        errorMonth.classList.add("error-message");
-    }else{
-        errorMonth.innerHTML="";
-    }
-
-    if (fieldYear.value.length==0){
-        errorYear.innerHTML="This field is required";
-        errorYear.classList.remove("hide");
-        errorYear.classList.add("error-message");
-    }else{
-        errorYear.innerHTML="";
+function validarDia() {
+    if (fieldDay.value.length == 0) {
+        aplicarErros(labelDay, fieldDay, errorDay, "This field is required");
+    } else if (fieldDay.value < 1 || fieldDay.value > 31) {
+        aplicarErros(labelDay, fieldDay, errorDay, "Must be a valid day");
+    } else {
+        revertErrors(labelDay, fieldDay, errorDay);
     }
 }
 
-function validarCamposInvalidos(){
-    if(fieldDay.value.length > 0 && (fieldDay.value < 1 || fieldDay.value > 31)){
-        errorDay.innerHTML="Must be a valid day";
-        errorDay.classList.remove("hide");
-        errorDay.classList.add("error-message");
+function validarMes() {
+    if (fieldMonth.value.length == 0){
+        aplicarErros(labelMonth, fieldMonth, errorMonth, "This field is required");
+    } else if (fieldMonth.value < 1 || fieldMonth.value > 12) {
+        aplicarErros(labelMonth, fieldMonth, errorMonth, "Must be a valid month");
+    } else {
+        revertErrors(labelMonth, fieldMonth, errorMonth);
     }
+}
 
-    if(fieldMonth.value.length > 0 && (fieldMonth.value < 1 || fieldMonth.value > 12)){
-        errorMonth.innerHTML="Must be a valid month";
-        errorMonth.classList.remove("hide");
-        errorMonth.classList.add("error-message");
-    }
-
+function validarAnos() {
     var ano = new Date().getFullYear();
-    if(fieldYear.value.length > 0 && (fieldYear.value < 1 || fieldYear.value > ano)){
-        errorYear.innerHTML="Must be a valid year";
-        errorYear.classList.remove("hide");
-        errorYear.classList.add("error-message");
+    if (fieldYear.value.length==0){
+        aplicarErros(labelYear, fieldYear, errorYear, "This field is required");
+    } else if(fieldYear.value < 1 || fieldYear.value > ano){
+        aplicarErros(labelYear, fieldYear, errorYear, "Must be a valid year");
+    } else {
+        revertErrors(labelYear, fieldYear, errorYear);
     }
+}
 
+function aplicarErros(label, field, messageErro, text) {
+    messageErro.innerHTML = text;
+    messageErro.classList.remove("hide");
+    addError(messageErro);
+    addError(label);
+    addError(field);
+}
+
+function revertErrors (label, field, messageErro) {
+    messageErro.classList.add("hide");
+    removeError(messageErro);
+    removeError(label);
+    removeError(field);
+}
+
+function addError(element){
+    element.classList.add("error");
+}
+
+function removeError(element){
+    element.classList.remove("error");
 }

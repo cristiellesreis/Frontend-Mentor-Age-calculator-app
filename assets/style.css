@@ -16,12 +16,17 @@
 }
 
 main{
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--color-off-white);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
 }
 
 .hide{
@@ -69,6 +74,24 @@ main{
     font-size: 2rem;
     font-weight: 700;
     padding-left: 1rem;
+
+}
+
+.fill-data input.error {
+    border-color: var(--color-light-red);
+} 
+
+.fill-data label.error {
+    color: var(--color-light-red);
+}
+
+.fill-data span.error {
+    font-family: var(--font-principal);
+    color: var(--color-light-red);
+    font-size: .8rem;
+    font-style: italic;
+    margin-top: .5rem;
+    font-weight: 400;
 }
 
 input, button{
@@ -114,7 +137,7 @@ input, button{
     font-family: var(--font-principal);
     font-style: italic;
     font-size: 5rem;
-    font-weight: 800;
+    font-weight: 900;
     color: var(--color-off-black);
 }
 
@@ -128,14 +151,61 @@ input, button{
     font-size: .8rem;
 }
 
-.error-message span{
-    font-family: var(--font-principal);
-    color: var(--color-light-red);
-    font-size: .8rem;
-    font-style: italic;
-    margin-top: .5rem;
-    font-weight: 400;
-}
+@media (max-width: 600px) {
+
+    .container-data{
+        width: 21rem;
+        height: 32rem;
+        border-radius: 1.5rem 1.5rem 5rem 1.5rem;
+        padding: 0 1rem 0 1rem;
+    }
+
+    .fill-data input {
+        width: 5.5rem;
+        height: 3rem;
+        font-size: 1.3rem;
+        padding-left: 0.5rem;
+    }
+
+    .age-result{
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-top: 3rem;
+    }
+
+    .fill-data{
+        gap: 1rem;
+    }
+
+    .btn-divider{
+        margin-top: 4rem;
+        
+    }
+
+    .btn-divider hr{
+        width: 20rem;
+        position: relative;
+    }
+
+    .btn-calculate{
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        left: 42%;
+    }
+
+    .btn-calculate img{
+        width: 1.7rem;
+    }
+    
+    .attribution{
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+   
+    
 
 
-
+  }
+  
